@@ -1,0 +1,155 @@
+body {
+    background-image: url("img/violet.jpg");
+}
+
+@font-face {
+  font-family: 'arcade'; 
+  src: url("font/ARCADE_I.ttf"); 
+}
+
+@font-face {
+  font-family: 'arcade2'; 
+  src: url("font/ARCADE_N.ttf"); 
+}
+
+#header{
+  background-color:crimson;
+  height:45px;
+  width:380px;
+  top:0px;
+  margin-left:-10px;
+  right:0px;
+}
+
+#header>p{
+  color:white;
+  font-family:'arcade2';
+  text-align:center;
+  padding:4px;
+  font-size:30px;
+
+}
+
+a {
+  text-align:center;
+  margin:0 auto;
+  font-family:'arcade2';
+  font-size:12px;
+}
+
+h1 {
+  font-family: 'arcade';
+  margin:40px;
+  margin-bottom:0px;
+  color:white;
+}
+#campo{
+  max-width: 230px;
+  margin-left:40px;
+  margin-top:0px;
+}
+
+input{
+  margin-top:30px;
+  width:30px;
+  height:30px;
+}
+
+label{
+  margin-top:-25px;
+  margin-left:50px;
+  font-family: 'arcade2';
+  display: block;
+  color:white;
+}
+
+#mod {
+  font-family:'arcade2';
+  margin-left:10px;
+  margin-top:30px;
+  width: 150px;
+  height:40px;
+  color:crimson;
+  background:white;
+}
+
+#btn {
+  font-family:'arcade2';
+  margin-left:20px;
+  margin-top:30px;
+  width: 170px;
+  height:40px;
+  color:crimson;
+  background:white;
+  margin-bottom:-20px;
+}
+
+#btn2 {
+  font-family:'arcade2';
+  margin-left:20px;
+  margin-top:30px;
+  width: 90%;
+  height:40px;
+  color:white;
+  background:crimson;
+  margin-bottom:50px;
+}
+
+.contenitore{
+  margin-left:10px;
+}
+
+.theteam{
+  display:inline-block;
+  margin-left:0px;
+  width:75px;
+  margin-bottom:30px;
+}
+
+.idplayer{
+  margin-left:-30px;
+  width:200px;
+}
+
+.testo {
+  font-family:'arcade2';
+  color:white;
+  font-size:10px;
+  text-align:center;
+  margin-left:30px;
+}
+
+.testo2 {
+  font-family:'arcade2';
+  color:white;
+  font-size:8px;
+  text-align:center;
+  margin-left:30px;
+}
+
+.titolo{
+  font-family:'arcade2';
+  font-size:30px;
+  color:white;
+  margin:0 auto;
+}
+
+#footer{
+  height:100px;
+}
+
+#loading_screen
+{  
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  color: #FFF;  
+  text-align: center;
+  padding: 80px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+}

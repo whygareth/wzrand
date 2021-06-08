@@ -1,0 +1,103 @@
+<DOCTYPE html>
+    <html>   
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="style.css">
+            <title>Randomizzatore</title>
+            <script>
+                (function(){   
+                  if (window.addEventListener)
+                  {
+                    window.addEventListener("load", nascondi_loading_screen, false);    
+                  }else{
+                    window.attachEvent("onload", nascondi_loading_screen);
+                  }
+                })();
+                function nascondi_loading_screen()
+                {
+                  document.getElementById("loading_screen").style.display = 'none';
+                }
+                </script>
+        </head>
+        <body>
+            <div id="loading_screen">
+                <h1>Loading...</h1> 
+              </div>
+        <div id='header'>
+             <p>war/zone<p>   
+        </div>
+        <div>
+            <div style="width:49%; display:inline-block; text-align:center;background:white;">
+                <a href="https://wzstats.gg/" style="text-decoration: none;">WZSTATS.GG</a>
+            </div>
+
+            <div style="width:49%; display:inline-block;text-align:center;background:white;">
+                <a href="https://www.wzranked.com/" style="text-decoration: none;">WZ ranked</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:49%; display:inline-block; text-align:center;background:white;">
+                <a style="text-decoration: line-through;">media</a>
+            </div>
+
+            <div style="width:49%; display:inline-block;text-align:center;background:white;">
+                <a style="text-decoration: line-through;">update</a>
+            </div>
+        </div>
+          <h1>select player...</h1>
+            <div id="campo">
+               <form id="campo-scelta">
+                    <input type="checkbox" name="a"><label>Mattex</label>
+                    <input type="checkbox" name="a"><label>stevex</label>
+                    <input type="checkbox" name="a"><label>Fredzoned</label>
+                    <input type="checkbox" name="a"><label>mr.mustache</label>
+                    <input type="checkbox" name="a"><label>curna ruri</label>
+                    <input type="checkbox" name="a"><label>irobman</label>
+                    <input type="checkbox" name="a"><label>tarantino</label>
+                    <input type="checkbox" name="a"><label>pippobaro</label>
+                    <input type="checkbox" name="a"><label>burgspencer</label>
+                    <input type="checkbox" name="a"><label>ezione</label>
+                    <input type="checkbox" name="a"><label>camikaze</label>
+                    <input type="checkbox" name="a"><label>The Mayor</label>
+                    <input type="checkbox" name="a"><label>Guest1</label>
+                    <input type="checkbox" name="a"><label>Guest2</label>
+                    <input type="checkbox" name="a"><label>Guest3</label>
+                    
+            </div>        
+                    
+                </form>
+        <div style=margin-bottom:-20px;>
+            <div style="width:40%; display:inline-block;">
+                <select name="mod" id="mod">
+                    <option value="casuali">Random</option>
+                    <option value="Equilibrate">K/D Rateo</option>
+                    <option value="Equilibrate">CONSOLE</option>
+                </select>
+            </div>
+
+            <div style="width:40%; display:inline-block;">
+                <button id="btn" onclick="pulisci()">clear</button>
+            </div>
+        </div>
+        <div>
+
+            <div style="width:95%; display:inline-block;">
+                <button id="btn2" onclick="gestioneEventi()">press start</button>
+            </div>
+        </div>
+
+        <div class="campo-generato">
+                <div id="contenitore" class="contenitore"></div>
+                <div id="contenitore2" class="contenitore"></div>
+                <div id="contenitore3" class="contenitore"></div>
+                <div id="contenitore4" class="contenitore"></div>
+                <div id="contenitore5" class="contenitore"></div>
+            </div>    
+
+        <div id=footer></div>
+        </body>
+        <script src="script.js"></script>
+    
+</html> 
+    
