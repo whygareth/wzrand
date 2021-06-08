@@ -4,12 +4,12 @@ body {
 
 @font-face {
   font-family: 'arcade'; 
-  src: url("../whygareth/wzrand/ARCADE_I.ttf"); 
+  src: url("/whygareth/wzrand/ARCADE_I.ttf"); 
 }
 
 @font-face {
   font-family: 'arcade2'; 
-  src: url("../whygareth/wzrand/ARCADE_N.ttf"); 
+  src: url("/whygareth/wzrand/ARCADE_N.ttf"); 
 }
 
 #header{
