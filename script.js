@@ -92,21 +92,21 @@ class Randomizza {
 }
 
     var stamplayerz = new Randomizza(z, playerz=[
-        {username:"mattex", rateo:'0.80', cross:'false', src:'img/playerz/mattex.png'},
-        {username:"stevex", rateo:'1.80', cross:'true', src:'img/playerz/stevex.png'},
-        {username:"fred", rateo:'2.80', cross:'false', src:'img/playerz/fredzoned.png'},
-        {username:"musta", rateo:'0.80', cross:'false', src:'img/playerz/mustache.png'},
-        {username:"curna", rateo:'1.80', cross:'true', src:'img/playerz/curna.png'},
-        {username:"irob", rateo:'2.80', cross:'false', src:'img/playerz/irobman.png'},
-        {username:"tara", rateo:'0.80', cross:'false', src:'img/playerz/tarantino.png'},
-        {username:"pippo", rateo:'1.80', cross:'true', src:'img/playerz/pippobaro.png'},
-        {username:"burg", rateo:'2.80', cross:'false', src:'img/playerz/burgspencer.png'},
-        {username:"ezione", rateo:'2.80', cross:'false', src:'img/playerz/ezione.png'},
-        {username:"cami", rateo:'2.80', cross:'false', src:'img/playerz/camikaze.png'},
-        {username:"mayor", rateo:'2.80', cross:'false', src:'img/playerz/mayor.png'},
-        {username:"guest1", rateo:'0.80', cross:'false', src:'img/playerz/guest.png'},
-        {username:"guest2", rateo:'0.80', cross:'false', src:'img/playerz/guest.png'},
-        {username:"guest3", rateo:'0.80', cross:'false', src:'img/playerz/guest.png'},
+        {username:"mattex", rateo:'0.80', cross:'false', src:'mattex.png'},
+        {username:"stevex", rateo:'1.80', cross:'true', src:'stevex.png'},
+        {username:"fred", rateo:'2.80', cross:'false', src:'fredzoned.png'},
+        {username:"musta", rateo:'0.80', cross:'false', src:'mustache.png'},
+        {username:"curna", rateo:'1.80', cross:'true', src:'curna.png'},
+        {username:"irob", rateo:'2.80', cross:'false', src:'irobman.png'},
+        {username:"tara", rateo:'0.80', cross:'false', src:'tarantino.png'},
+        {username:"pippo", rateo:'1.80', cross:'true', src:'pippobaro.png'},
+        {username:"burg", rateo:'2.80', cross:'false', src:'burgspencer.png'},
+        {username:"ezione", rateo:'2.80', cross:'false', src:'ezione.png'},
+        {username:"cami", rateo:'2.80', cross:'false', src:'camikaze.png'},
+        {username:"mayor", rateo:'2.80', cross:'false', src:'mayor.png'},
+        {username:"guest1", rateo:'0.80', cross:'false', src:'guest.png'},
+        {username:"guest2", rateo:'0.80', cross:'false', src:'guest.png'},
+        {username:"guest3", rateo:'0.80', cross:'false', src:'guest.png'},
         ], newPlayerz);
               
         
