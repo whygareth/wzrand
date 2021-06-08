@@ -1,15 +1,15 @@
 body {
-    background-image: url("img/violet.jpg");
+    background-image: url("violet.jpg");
 }
 
 @font-face {
   font-family: 'arcade'; 
-  src: url("font/ARCADE_I.ttf"); 
+  src: url("/whygareth/wzrand/ARCADE_I.ttf"); 
 }
 
 @font-face {
   font-family: 'arcade2'; 
-  src: url("font/ARCADE_N.ttf"); 
+  src: url("/whygareth/wzrand/ARCADE_N.ttf"); 
 }
 
 #header{
