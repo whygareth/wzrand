@@ -25,8 +25,7 @@ body {
   color:white;
   font-family:'arcade2';
   text-align:center;
-  padding:4px;
-  font-size:30px;
+  font-size:40px;
 
 }
 
@@ -43,7 +42,7 @@ h1 {
   margin:40px;
   margin-bottom:0px;
   color:white;
-  font-size:70px;
+  font-size:50px;
 }
 #campo{
   max-width: 230px;
@@ -61,13 +60,14 @@ label{
   margin-top:-25px;
   margin-left:50px;
   font-family: 'arcade2';
-  font-size:34px;
+  font-size:20px;
   display: block;
   color:white;
 }
 
 #mod {
   font-family:'arcade2';
+  font-size:15px;
   margin-left:10px;
   margin-top:30px;
   width: 150px;
@@ -78,6 +78,7 @@ label{
 
 #btn {
   font-family:'arcade2';
+  font-size:15px;
   margin-left:20px;
   margin-top:30px;
   width: 170px;
