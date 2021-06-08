@@ -4,12 +4,12 @@ body {
 
 @font-face {
   font-family: 'arcade'; 
-  src: url("font/ARCADE_I.ttf"); 
+  src: url("../wzrand/ARCADE_I.ttf"); 
 }
 
 @font-face {
   font-family: 'arcade2'; 
-  src: url("font/ARCADE_N.ttf"); 
+  src: url("../wzrand/font/ARCADE_N.ttf"); 
 }
 
 #header{
