@@ -9,7 +9,7 @@ var contenitore;
 //indice dell'elemento checkato viene pushato in un array
 function addItemIfCheck(){
     var elem=document.getElementById('campo-scelta').children;
-    for(i=0; i<29; i++){
+    for(i=0; i<35; i++){
         if (i==0){      
             if (elem[i].checked == true){
                 z.push(i);
