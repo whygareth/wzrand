@@ -104,6 +104,8 @@ class Randomizza {
         {username:"ezione", rateo:'1.16', cross:'false', src:'ezione.png'},
         {username:"cami", rateo:'0.90', cross:'false', src:'camikaze.png'},
         {username:"mayor", rateo:'0.85', cross:'false', src:'mayor.png'},
+        {username:"darioc", rateo:'0.96', cross:'false', src:'tarantino.png'},
+        {username:"luis10", rateo:'1.02', cross:'true', src:'pippobaro.png'},
         {username:"guest1", rateo:'ND', cross:'false', src:'guest.png'},
         {username:"guest2", rateo:'ND', cross:'false', src:'guest.png'},
         {username:"guest3", rateo:'ND', cross:'false', src:'guest.png'},
