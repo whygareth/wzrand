@@ -107,8 +107,6 @@ class Randomizza {
         {username:"darioc", rateo:'0.96', cross:'false', src:'tarantino.png'},
         {username:"luis10", rateo:'1.02', cross:'true', src:'pippobaro.png'},
         {username:"guest1", rateo:'ND', cross:'false', src:'guest.png'},
-        {username:"guest2", rateo:'ND', cross:'false', src:'guest.png'},
-        {username:"guest3", rateo:'ND', cross:'false', src:'guest.png'},
         ], newPlayerz);
               
         
