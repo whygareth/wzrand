@@ -10,6 +10,9 @@
             <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
             <link rel="manifest" href="site.webmanifest">
             <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
             <meta name="msapplication-TileColor" content="#da532c">
             <meta name="theme-color" content="#ffffff">
             
@@ -32,67 +35,70 @@
             <div id="loading_screen">
                 <h1>Loading...</h1> 
               </div>
-        <div id='header'>
-             <p>WZRANDOM<p>  
-        </div>
-        <div>
-            <div style="width:49%; display:inline-block; text-align:center;background:white;">
-                <a href="https://wzstats.gg/" style="text-decoration: none;">WZSTATS.GG</a>
+        <div class='header'>
+             <h1 style=" background: linear-gradient(-45deg, #ee7752, crimson, rgb(20, 157, 220), rgb(255, 238, 3));
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;">WZRANDOM</h1>
+        </div> 
+        <div style="display:flex;">
+            <div style="width:50%; text-align:center;padding: 3px;">
+                <a href="https://wzstats.gg/" style="text-decoration: none;">wzstats.gg &#8250</a>
             </div>
 
-            <div style="width:49%; display:inline-block;text-align:center;background:white;">
-                <a href="https://www.wzranked.com/" style="text-decoration: none;">WZ ranked</a>
+            <div style="width:50%; text-align:center;padding: 3px;">
+                <a href="https://www.wzranked.com/" style="text-decoration: none;">wzranked &#8250</a>
             </div>
-        </div>
-        <div>
-            <div style="width:49%; display:inline-block; text-align:center;background:white;">
-                <a style="text-decoration: line-through;">media</a>
-            </div>
+        </div> 
 
-            <div style="width:49%; display:inline-block;text-align:center;background:white;">
-                <a style="text-decoration: line-through;">update</a>
-            </div>
-        </div>
-          <h1>select player...</h1>
+          <h1>SELECT PLAYER</h1>
             <div id="campo">
                <form id="campo-scelta">
-                    <input type="checkbox" name="a"><label>Mattex</label>
-                    <input type="checkbox" name="a"><label>stevex</label>
-                    <input type="checkbox" name="a"><label>Fredzoned</label>
-                    <input type="checkbox" name="a"><label>mr.mustache</label>
-                    <input type="checkbox" name="a"><label>curna ruri</label>
-                    <input type="checkbox" name="a"><label>irobman</label>
-                    <input type="checkbox" name="a"><label>tarantino</label>
-                    <input type="checkbox" name="a"><label>pippobaro</label>
-                    <input type="checkbox" name="a"><label>burgspencer</label>
-                    <input type="checkbox" name="a"><label>ezione</label>
-                    <input type="checkbox" name="a"><label>camikaze</label>
-                    <input type="checkbox" name="a"><label>The Mayor</label>
-                    <input type="checkbox" name="a"><label>darioc</label>
-                    <input type="checkbox" name="a"><label>luis10</label>
+                    <input type="checkbox" name="a"><label>MATTEX</label>
+                    <input type="checkbox" name="a"><label>STEVEX</label>
+                    <input type="checkbox" name="a"><label>FREDZONED</label>
+                    <input type="checkbox" name="a"><label>MR.MUSTACHE</label>
+                    <input type="checkbox" name="a"><label>CURNA RURI</label>
+                    <input type="checkbox" name="a"><label>IROBMAN</label>
+                    <input type="checkbox" name="a"><label>TARANTINO</label>
+                    <input type="checkbox" name="a"><label>PIPPOBARO</label>
+                    <input type="checkbox" name="a"><label>BURGSPENC</label>
+                    <input type="checkbox" name="a"><label>EZIONE</label>
+                    <input type="checkbox" name="a"><label>CAMIKAZE</label>
+                    <input type="checkbox" name="a"><label>THE MAYOR</label>
+                    <input type="checkbox" name="a"><label>DARIOC</label>
+                    <input type="checkbox" name="a"><label>LUIS10</label>
+                    <input type="checkbox" name="a"><label>RICCARDINHO</label>
+                    <input type="checkbox" name="a"><label>ANDREFRANKY</label>
+                    <input type="checkbox" name="a"><label>EDERO</label>
+                    <input type="checkbox" name="a"><label>PUCIO</label>
                     <input type="checkbox" name="a"><label>Guest1</label>
+                    <input type="checkbox" name="a"><label>Guest2</label>
+                    <input type="checkbox" name="a"><label>Guest3</label>
+                    <input type="checkbox" name="a"><label>Guest4</label>
                     
             </div>        
                     
                 </form>
-        <div style=margin-bottom:-20px;>
-            <div style="width:40%; display:inline-block;">
+        <div style="margin-bottom:-20px;display: flex;">
+            <div style="width:50%;">
                 <select name="mod" id="mod">
-                    <option value="casuali">Random</option>
-                    <option value="Equilibrate">K/D Rateo</option>
-                    <option value="Equilibrate">CONSOLE</option>
+                    <option value="casuali">RANDOM</option>
                 </select>
             </div>
 
-            <div style="width:40%; display:inline-block;">
-                <button id="btn" onclick="pulisci()">clear</button>
+            <div style="width:50%;">
+                <button id="btn" onclick="pulisci()">CLEAR</button>
             </div>
         </div>
-        <div>
-
-            <div style="width:95%; display:inline-block;">
-                <button id="btn2" onclick="gestioneEventi()">press start</button>
+       
+        <div style="width:100%;">
+            <div style="display:inline-block;width:100%;">
+                <div class="btn2" onclick="gestioneEventi()"><h2>PRESS START</h2></div>
             </div>
+        </div>
+
+        <div style="width: 150px; margin:0 auto; background: linear-gradient( #FF9933,#FF9933, white,#138808, #138808);">
+            <p style="text-align:center; font-family: 'Zen Dots', cursive; padding:10px; color:#050538; font-size: 9px;">Made with &#x2764 for Plind</p> 
         </div>
 
         <div class="campo-generato">
@@ -103,7 +109,6 @@
                 <div id="contenitore5" class="contenitore"></div>
             </div>    
 
-        <div id=footer></div>
         </body>
         <script src="script.js"></script>
     
