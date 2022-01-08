@@ -9,7 +9,7 @@ var contenitore;
 //indice dell'elemento checkato viene pushato in un array
 function addItemIfCheck(){
     var elem=document.getElementById('campo-scelta').children;
-    for(i=0; i<29; i++){
+    for(i=0; i<43; i++){
         if (i==0){      
             if (elem[i].checked == true){
                 z.push(i);
@@ -92,21 +92,28 @@ class Randomizza {
 }
 
     var stamplayerz = new Randomizza(z, playerz=[
-        {username:"mattex", rateo:'1.73', cross:'false', src:'mattex.png'},
-        {username:"stevex", rateo:'1.33', cross:'true', src:'stevex.png'},
-        {username:"fred", rateo:'1.01', cross:'false', src:'fredzoned.png'},
-        {username:"musta", rateo:'1.03', cross:'false', src:'mustache.png'},
-        {username:"curna", rateo:'1.11', cross:'true', src:'curna.png'},
-        {username:"irob", rateo:'0.33', cross:'false', src:'irobman.png'},
-        {username:"tara", rateo:'1.30', cross:'false', src:'tarantino.png'},
-        {username:"pippo", rateo:'0.79', cross:'true', src:'pippobaro.png'},
-        {username:"burg", rateo:'0.72', cross:'false', src:'burgspencer.png'},
-        {username:"ezione", rateo:'1.16', cross:'false', src:'ezione.png'},
-        {username:"cami", rateo:'0.90', cross:'false', src:'camikaze.png'},
-        {username:"mayor", rateo:'0.85', cross:'false', src:'mayor.png'},
-        {username:"darioc", rateo:'0.96', cross:'false', src:'tarantino.png'},
-        {username:"luis10", rateo:'1.02', cross:'true', src:'pippobaro.png'},
+        {username:"MATTEX", rateo:'1.73', cross:'false', src:'mattex.png'},
+        {username:"STEVEX", rateo:'1.33', cross:'true', src:'stevex.png'},
+        {username:"FRED", rateo:'1.01', cross:'false', src:'fredzoned.png'},
+        {username:"MR.MUS", rateo:'1.03', cross:'false', src:'mustache.png'},
+        {username:"CURNA", rateo:'1.11', cross:'true', src:'curna.png'},
+        {username:"IROB", rateo:'0.33', cross:'false', src:'irobman.png'},
+        {username:"TARA", rateo:'1.30', cross:'false', src:'tarantino.png'},
+        {username:"PIPPO", rateo:'0.79', cross:'true', src:'pippobaro.png'},
+        {username:"BURG", rateo:'0.72', cross:'false', src:'burgspencer.png'},
+        {username:"EZIONE", rateo:'1.16', cross:'false', src:'ezione.png'},
+        {username:"CAMI", rateo:'0.90', cross:'false', src:'camikaze.png'},
+        {username:"MAYOR", rateo:'0.85', cross:'false', src:'mayor.png'},
+        {username:"DARIOC", rateo:'0.96', cross:'false', src:'tarantino.png'},
+        {username:"LUIS10", rateo:'1.02', cross:'true', src:'pippobaro.png'},
+        {username:"DINHO", rateo:'1.02', cross:'true', src:'pippobaro.png'},
+        {username:"FRANKIE", rateo:'1.02', cross:'true', src:'pippobaro.png'},
+        {username:"EDERO", rateo:'1.02', cross:'true', src:'pippobaro.png'},
+        {username:"PUCIO", rateo:'1.02', cross:'true', src:'pippobaro.png'},
         {username:"guest1", rateo:'ND', cross:'false', src:'guest.png'},
+        {username:"guest2", rateo:'ND', cross:'false', src:'guest.png'},
+        {username:"guest3", rateo:'ND', cross:'false', src:'guest.png'},
+        {username:"guest4", rateo:'ND', cross:'false', src:'guest.png'}
         ], newPlayerz);
               
         
@@ -172,6 +179,11 @@ function gestioneEventi(){
                     titolo.innerHTML = "Team#5";
                 break;
                 }
+
+                var divblock = document.createElement("div");
+                var bloccoExt = document.createAttribute("class");
+                mainDiv.appendChild(divblock);
+                
                 for (i=0;i<team.length;i++){
 
                     var divteam = document.createElement("div");
@@ -181,14 +193,23 @@ function gestioneEventi(){
                     var srcAttr = document.createAttribute("src");
                     var idImg = document.createAttribute("class");
             
+                    var divteam2 = document.createElement("div");
+                    var idAttr2 = document.createAttribute("class");
+
                     var para = document.createElement("p");
                     var idPara = document.createAttribute("class");
     
                     var para2 = document.createElement("p");
                     var idPara2 = document.createAttribute("class");
            
+                    bloccoExt.value = "bloccoext";
+                    divblock.setAttributeNode(bloccoExt);
+
                     idAttr.value = "theteam";
                     divteam.setAttributeNode(idAttr);
+
+                    idAttr2.value = "thetext";
+                    divteam2.setAttributeNode(idAttr2);
 
                     srcAttr.value = team[i].src;
                     img.setAttributeNode(srcAttr);
@@ -201,10 +222,11 @@ function gestioneEventi(){
                     idPara2.value = "testo2";
                     para2.setAttributeNode(idPara2);
                     
-                    mainDiv.appendChild(divteam);
+                    divblock.appendChild(divteam);
                     divteam.appendChild(img);
-                    divteam.appendChild(para);
-                    divteam.appendChild(para2);
+                    divteam.appendChild(divteam2);
+                    divteam2.appendChild(para);
+                    divteam2.appendChild(para2);
                     
                     para.innerHTML = team[i].username;
                     para2.innerHTML = "rateo: " + team[i].rateo;
