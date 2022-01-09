@@ -146,6 +146,7 @@ label{
 
 .idplayer{
   width: 50px;
+  height:auto;
   display: inline-block;
   
 }
