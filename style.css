@@ -31,7 +31,7 @@ body {
 
 }
 
-a {
+a,p {
   text-align:center;
   margin:0 auto;
   font-family: 'Zen Dots', cursive;
@@ -65,17 +65,15 @@ input{
   -webkit-transform: scale(1.6);
   -o-transform: scale(1.6);
   transform: scale(1.6);
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 label{
   margin: 12px 5px;
   font-family: 'Zen Dots', cursive;
-  font-size: 12px;
+  font-size: 15px;
   display: block;
   color: white;
-  width: 37%;
+  width: 41%;
 }
 
 #mod {
@@ -146,25 +144,42 @@ label{
 
 .idplayer{
   width: 50px;
-  height:auto;
   display: inline-block;
   
 }
 
+.thetext{
+  text-align: center;
+  margin: 0 auto;
+}
+
 .testo {
   font-family: 'Zen Dots', cursive;
-  color: white;
-  font-size: 15px;
-  margin-left: 20px;
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.testo3 {
+  font-family: 'Zen Dots', cursive;
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 4px;
+    font-weight: 200;
 }
 
 .testo2 {
-  font-family: 'Zen Dots', cursive;
-  color:white;
-  font-size:10px;
-  margin-left: 30px;
-  text-align: center;
+    font-family: 'Zen Dots', cursive;
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    text-align: center;
 }
+
 
 .titolo{
   font-family: 'Zen Dots', cursive;
