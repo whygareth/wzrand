@@ -92,28 +92,28 @@ class Randomizza {
 }
 
     var stamplayerz = new Randomizza(z, playerz=[
-        {username:"MATTEX", rateo:'1.73', cross:'false', src:'mattex.png'},
-        {username:"STEVEX", rateo:'1.33', cross:'true', src:'steve.png'},
-        {username:"FRED", rateo:'1.01', cross:'false', src:'fred.png'},
-        {username:"MR.MUS", rateo:'1.03', cross:'false', src:'mrmusta.png'},
-        {username:"CURNA", rateo:'1.11', cross:'true', src:'curnar.png'},
-        {username:"IROB", rateo:'0.33', cross:'false', src:'rob.png'},
-        {username:"TARA", rateo:'1.30', cross:'false', src:'taranta.png'},
-        {username:"PIPPO", rateo:'0.79', cross:'true', src:'pippobaro.png'},
-        {username:"BURG", rateo:'0.72', cross:'false', src:'burgspenc.png'},
-        {username:"EZIONE", rateo:'1.33', cross:'false', src:'lami.png'},
-        {username:"CAMI", rateo:'0.90', cross:'false', src:'cami.png'},
-        {username:"MAYOR", rateo:'0.85', cross:'false', src:'mayor.png'},
-        {username:"DARIOC", rateo:'0.96', cross:'false', src:'dariocalci.png'},
-        {username:"LUIS10", rateo:'1.02', cross:'true', src:'luis10.png'},
-        {username:"DINHO", rateo:'1.02', cross:'true', src:'dinho.png'},
-        {username:"FRANKIE", rateo:'1.02', cross:'true', src:'frankie.png'},
-        {username:"EDERO", rateo:'1.02', cross:'true', src:'edero.png'},
-        {username:"PUCIO", rateo:'1.02', cross:'true', src:'pucio.png'},
-        {username:"guest1", rateo:'ND', cross:'false', src:'guest.png'},
-        {username:"guest2", rateo:'ND', cross:'false', src:'guest.png'},
-        {username:"guest3", rateo:'ND', cross:'false', src:'guest.png'},
-        {username:"guest4", rateo:'ND', cross:'false', src:'guest.png'}
+        {username:"MATTEX", rateo:'1.73', epit:'Tastierino Matto', src:'mattex.png'},
+        {username:"STEVEX", rateo:'1.33', epit:'The Turkish Padbreaker', src:'steve.png'},
+        {username:"FRED", rateo:'1.01', epit:'Mattex 🖤', src:'fred.png'},
+        {username:"MR.MUS", rateo:'1.03', epit:'Mr Musclown', src:'mrmusta.png'},
+        {username:"CURNA", rateo:'1.11', epit:'Buona continuazione', src:'curnar.png'},
+        {username:"IROB", rateo:'0.33', epit:'The Infrascher', src:'rob.png'},
+        {username:"TARA", rateo:'1.30', epit:'Not from Taranto', src:'taranta.png'},
+        {username:"PIPPO", rateo:'0.79', epit:'Exotic Man', src:'pippobaro.png'},
+        {username:"BURG", rateo:'0.72', epit:'Fake Roze', src:'burgspenc.png'},
+        {username:"EZIONE", rateo:'1.33', epit:'Capitan Scammesia', src:'lami.png'},
+        {username:"CAMI", rateo:'0.90', epit:'8325165', src:'cami.png'},
+        {username:"MAYOR", rateo:'0.85', epit:'Sindaco di Rebirth', src:'mayor.png'},
+        {username:"DARIOC", rateo:'0.96', epit:'Avvocato di Verdansk', src:'dariocalci.png'},
+        {username:"LUIS10", rateo:'1.02', epit:'Sergente di Cavalieri', src:'luis10.png'},
+        {username:"DINHO", rateo:'1.02', epit:'Conosco molto bene', src:'dinho.png'},
+        {username:"FRANKIE", rateo:'1.02', epit:'Wrong Pippo', src:'frankie.png'},
+        {username:"EDERO", rateo:'1.02', epit:'Quiet voice', src:'edero.png'},
+        {username:"PUCIO", rateo:'1.02', epit:'Crazy Runner', src:'pucio.png'},
+        {username:"guest1", rateo:'ND', epit:'Random Player', src:'guest.png'},
+        {username:"guest2", rateo:'ND', epit:'Random Player', src:'guest.png'},
+        {username:"guest3", rateo:'ND', epit:'Random Player', src:'guest.png'},
+        {username:"guest4", rateo:'ND', epit:'Random Player', src:'guest.png'}
         ], newPlayerz);
               
         
@@ -201,6 +201,9 @@ function gestioneEventi(){
     
                     var para2 = document.createElement("p");
                     var idPara2 = document.createAttribute("class");
+
+                    var para3 = document.createElement("p");
+                    var idPara3 = document.createAttribute("class");
            
                     bloccoExt.value = "bloccoext";
                     divblock.setAttributeNode(bloccoExt);
@@ -219,6 +222,9 @@ function gestioneEventi(){
                     idPara.value = "testo";
                     para.setAttributeNode(idPara);
 
+                    idPara3.value = "testo3";
+                    para3.setAttributeNode(idPara3);
+
                     idPara2.value = "testo2";
                     para2.setAttributeNode(idPara2);
                     
@@ -226,9 +232,11 @@ function gestioneEventi(){
                     divteam.appendChild(img);
                     divteam.appendChild(divteam2);
                     divteam2.appendChild(para);
+                    divteam2.appendChild(para3);
                     divteam2.appendChild(para2);
                     
                     para.innerHTML = team[i].username;
+                    para3.innerHTML = team[i].epit;
                     para2.innerHTML = "rateo: " + team[i].rateo;
                     }
                 }
