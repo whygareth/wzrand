@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
     <html>   
         <head>
             <meta charset="UTF-8">
@@ -40,6 +40,7 @@
              -webkit-background-clip: text;
              -webkit-text-fill-color: transparent;">WZRANDOM</h1>
         </div> 
+    <div class="container">
         <div style="display:flex;">
             <div style="width:50%; text-align:center;padding: 3px;">
                 <a href="https://wzstats.gg/" style="text-decoration: none;">wzstats.gg &#8250</a>
@@ -49,45 +50,82 @@
                 <a href="https://www.wzranked.com/" style="text-decoration: none;">wzranked &#8250</a>
             </div>
         </div> 
-
+        <div id="campo123">
+        <div id="campo">
           <h1>SELECT PLAYER</h1>
-            <div id="campo" style="max-width: 310px;">
                <form id="campo-scelta">
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>MATTEX</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>STEVEX</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>FREDZONED</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>MR.MUSTACHE</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>CURNA RURI</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>IROBMAN</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>TARANTINO</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>PIPPOBARO</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>BURGSPENC</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>EZIONE</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>CAMIKAZE</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>THE MAYOR</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>DARIOC</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>LUIS10</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>RICCARDINHO</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>ANDREFRANKY</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>EDERO</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>PUCIO</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest1</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest2</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest3</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest4</label>
-                    
+                </div>
+               </form>     
             </div>        
-                    
-                </form>
+                   </div> 
         <div style="margin-bottom:-20px;display: flex;">
-            <div style="width:50%;">
-                <select name="mod" id="mod">
-                    <option value="casuali">RANDOM</option>
-                </select>
-            </div>
-
-            <div style="width:50%;">
-                <button id="btn" onclick="pulisci()">CLEAR</button>
+            <div style="width:100%;">
+                <button id="btn" class="clearbutton" onclick="pulisci()">CLEAR</button>
             </div>
         </div>
        
@@ -100,7 +138,6 @@
         <div style="width: 150px; margin:0 auto; background: linear-gradient( #FF9933,#FF9933, white,#138808, #138808);">
             <p style="text-align:center; font-family: 'Zen Dots', cursive; padding:10px; color:#050538; font-size: 9px;">Made with &#x2764 for Plind</p> 
         </div>
-
         <div class="campo-generato">
                 <div id="contenitore" class="contenitore"></div>
                 <div id="contenitore2" class="contenitore"></div>
@@ -108,7 +145,7 @@
                 <div id="contenitore4" class="contenitore"></div>
                 <div id="contenitore5" class="contenitore"></div>
             </div>    
-
+</div>
         </body>
         <script src="script.js"></script>
     

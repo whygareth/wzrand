@@ -3,7 +3,10 @@ body {
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
+  padding: 0;
+  margin: 0;
 }
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -31,6 +34,10 @@ body {
 
 }
 
+.container{
+  margin: 0 10px;
+}
+
 a,p {
   text-align:center;
   margin:0 auto;
@@ -43,8 +50,7 @@ a,p {
 
 h1 {
   font-family: 'Zen Dots', cursive;
-  margin: 30px 5px;
-  margin-bottom:0px;
+  margin: 30px 0px 10px 0px;
   color:white;
   font-size:30px;
 }
@@ -59,23 +65,20 @@ h1 {
 }
 
 input{
-  margin-top: 15px;
-  -ms-transform: scale(1.6);
-  -moz-transform: scale(1.6);
-  -webkit-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
-  margin-left:5px;
-  margin-right:5px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    transform: scale(1.5);
 }
 
 label{
-  margin: 12px 5px;
   font-family: 'Zen Dots', cursive;
   font-size: 12px;
-  display: block;
   color: white;
-  width: 37%;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  line-height: 1;
 }
 
 #mod {
@@ -95,31 +98,32 @@ label{
   font-size:15px;
   margin-top:30px;
   height:40px;
-  width: 95%;
-  margin-left:5%;
+  width: 100%;
   background: linear-gradient(-45deg, #ee7752, crimson, rgb(20, 157, 220), rgb(255, 238, 3));
   text-align: center;
   color: white;
-  margin-bottom:-20px;
+  margin-bottom:0px;
 }
 
 .btn2 {
-  font-family: 'Zen Dots', cursive;
-  margin-top:30px;
-  width: 100%;
-  color:white;
-  background: white;
-  text-align: center;
-  margin-bottom: 30px;
+ font-family: 'Zen Dots', cursive;
+    margin-top: 30px;
+    width: auto;
+    color: white;
+    background: white;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    line-height: 1;
+    padding: 0;
 }
 
 .btn2>h2{
   background: linear-gradient(-45deg, #ee7752, crimson, rgb(20, 157, 220), rgb(255, 238, 3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 800;
-  padding: 10px;
   }
 
 .contenitore{
@@ -210,4 +214,16 @@ label{
   background-color: #000;
   background-color: rgba(0, 0, 0, .5);
   box-sizing: border-box;
+}
+
+.singlePlayer {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.hiddenPlayerz{
+  display: none;
+}
+.hiddenPlayerz .clearbutton{
+  display: block;
 }

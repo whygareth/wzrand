@@ -8,18 +8,17 @@ var contenitore;
 
 //indice dell'elemento checkato viene pushato in un array
 function addItemIfCheck(){
-    var elem=document.getElementById('campo-scelta').children;
-    for(i=0; i<43; i++){
-        if (i==0){      
-            if (elem[i].checked == true){
-                z.push(i);
-                }
-            }
-        else if (elem[i].checked == true){
-            z.push(i/2);
-            }
-        }
-        }    
+
+
+
+    var elemMod=document.querySelectorAll('.singlePlayer');
+    var i;
+    for(i=0; i<elemMod.length; i++){
+         if(elemMod[i].children[0].checked == true){
+            z.push(i);
+         }
+    }
+}
 
 class Randomizza {
     constructor(arrayRan, arrayPlay, newarr) {
@@ -119,6 +118,8 @@ class Randomizza {
         
 //chiama funzioni 
 function gestioneEventi(){
+    var nasconderePlayerz=document.getElementById('campo123');
+    nasconderePlayerz.classList.add('hiddenPlayerz');
     addItemIfCheck();
     console.log(z);
     stamplayerz.ifCheckedAddObject(z,playerz, newPlayerz);
