@@ -109,10 +109,12 @@ class Randomizza {
         {username:"FRANKIE", rateo:'0.68', epit:'Wrong Pippo', src:'frankie.png'},
         {username:"EDERO", rateo:'0.24', epit:'Quiet voice', src:'edero.png'},
         {username:"PUCIO", rateo:'1.00', epit:'Crazy Runner', src:'pucio.png'},
+        {username:"KARMA", rateo:'1.00', epit:'Oh fante!', src:'karma.png'},
         {username:"guest1", rateo:'ND', epit:'Random Player', src:'guest.png'},
         {username:"guest2", rateo:'ND', epit:'Random Player', src:'guest.png'},
         {username:"guest3", rateo:'ND', epit:'Random Player', src:'guest.png'},
-        {username:"guest4", rateo:'ND', epit:'Random Player', src:'guest.png'}
+        {username:"guest4", rateo:'ND', epit:'Random Player', src:'guest.png'},
+        {username:"guest5", rateo:'ND', epit:'Random Player', src:'guest.png'},
         ], newPlayerz);
               
         

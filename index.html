@@ -51,6 +51,279 @@
             </div>
         </div> 
         <div id="campo123">
+            <div id="burgspencerOverlay" class="burgspencer-overlay overlay-hidden">
+                <button id="closeAnimationBtn" class="close-btn" aria-label="Chiudi animazione">&times;</button>
+                <div id="displayText" class="text-burg element-hidden"></div>
+                <img id="imgburg1" src="./hesback.png" alt="Burgspencer is Back!" class="img-burg element-hidden">
+            </div>
+            <style>
+                /* Stili per l'overlay principale */
+                .burgspencer-overlay {
+                    position: fixed;
+                    inset: 0; /* Copre l'intera viewport (top, right, bottom, left a 0) */
+                    background-color: black;
+                    z-index: 9999; /* Assicura che l'overlay sia sopra tutti gli altri elementi */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    transition: opacity 1s ease-in-out; /* Transizione fluida per l'apparizione/scomparsa dell'overlay */
+                }
+                
+                /* Stati di visibilità per l'overlay */
+                .overlay-hidden {
+                    opacity: 0;
+                    pointer-events: none; /* Rende l'overlay non cliccabile quando nascosto */
+                }
+                
+                .overlay-visible {
+                    opacity: 1;
+                    pointer-events: auto; /* Rende l'overlay cliccabile quando visibile */
+                }
+                
+                /* Stili per gli elementi di testo all'interno dell'overlay */
+                .text-burg {
+                    color: white;
+                    font-family: 'Zen Dots', cursive;
+                    font-size: 30px; /* Dimensione base del font */
+                    text-align: center;
+                    margin-bottom: 1rem; /* Spazio sotto ogni elemento di testo */
+                    transition: opacity 0.5s ease-in-out; /* Transizione fluida per il testo */
+                }
+                
+                /* Stili per l'immagine all'interno dell'overlay */
+                .img-burg {
+                    max-width: 300px; /* Larghezza massima base dell'immagine */
+                    height: auto; /* Mantiene le proporzioni */
+                    z-index: 1; 
+                    transition: opacity 0.7s ease-in-out; /* Transizione fluida per l'immagine */
+                    margin-top: 1rem; /* Aggiunto un po' di spazio se testo e immagine sono vicini */
+                }
+                
+                /* Stati di visibilità per testo e immagine */
+                .element-hidden {
+                    opacity: 0;
+                }
+                
+                .element-visible {
+                    opacity: 1;
+                }
+            
+                /* Stili per il pulsante di chiusura */
+                .close-btn {
+                    position: absolute;
+                    top: 20px;
+                    right: 25px;
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: white;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    z-index: 10000; /* Assicura che sia sopra gli altri contenuti dell'overlay */
+                    line-height: 1;
+                    padding: 0;
+                }
+            
+                .close-btn:hover {
+                    color: #ccc; /* Leggero effetto al passaggio del mouse */
+                }
+                
+                /* Media queries per la reattività */
+                @media (min-width: 768px) { /* Per schermi medi (tablet) */
+                    .text-burg {
+                        font-size: 70px;
+                    }
+                    .img-burg {
+                        max-width: 400px;
+                    }
+                }
+                @media (min-width: 1024px) { /* Per schermi grandi (desktop) */
+                    .text-burg {
+                        font-size: 90px;
+                    }
+                    .img-burg {
+                        max-width: 500px;
+                    }
+                }
+            </style>
+                    
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const overlay = document.getElementById('burgspencerOverlay');
+                    const displayText = document.getElementById('displayText');
+                    const imgBurg1 = document.getElementById('imgburg1');
+                    const closeBtn = document.getElementById('closeAnimationBtn');
+            
+                    let animationAborted = false;
+                    const activeTimeouts = [];
+            
+                    // Helper per registrare i timeout e gestirne la cancellazione
+                    const registerTimeout = (callback, delay) => {
+                        const id = setTimeout(() => {
+                            const index = activeTimeouts.indexOf(id);
+                            if (index > -1) {
+                                activeTimeouts.splice(index, 1);
+                            }
+                            if (!animationAborted) { // Esegui la callback solo se l'animazione non è stata interrotta
+                                callback();
+                            }
+                        }, delay);
+                        activeTimeouts.push(id);
+                        return id;
+                    };
+            
+                    // Helper per cancellare tutti i timeout attivi dell'animazione
+                    const clearAllAnimationTimeouts = () => {
+                        activeTimeouts.forEach(clearTimeout);
+                        activeTimeouts.length = 0; // Svuota l'array
+                    };
+            
+                    // Durate delle transizioni e pause (in millisecondi)
+                    const overlayFadeDuration = 1000; // Dalla transizione CSS dell'overlay
+                    const textVisibleTime = 1000;     // Quanto tempo ogni parola (PUNCH, IS, BACK) rimane visibile
+                    const pauseBetweenWords = 500;    // Pausa tra le parole e prima/dopo il display finale
+                    const initialDelay = 500;         // Ritardo prima che inizi la prima animazione del testo
+                    const finalDisplayVisibleTime = 3000; // Quanto tempo "PUNCH IS BACK!" + immagine restano visibili
+            
+                    // Funzione per mostrare un elemento con effetto fade-in
+                    const fadeIn = (element, textContent = '') => {
+                        if (animationAborted) {
+                            element.style.opacity = '0';
+                            element.style.display = 'none';
+                            return;
+                        }
+                        if (textContent) {
+                            element.textContent = textContent;
+                        }
+                        element.style.display = 'block'; // Assicura che l'elemento sia nel layout
+                        element.offsetHeight; // Forza un reflow del browser
+                        element.classList.remove('element-hidden');
+                        element.classList.add('element-visible');
+                    };
+            
+                    // Funzione per nascondere un elemento con effetto fade-out e poi impostare display: none
+                    const fadeOutAndHide = (element, callback) => {
+                        if (animationAborted) {
+                            element.style.opacity = '0';
+                            element.style.display = 'none';
+                            return;
+                        }
+                        element.classList.remove('element-visible');
+                        element.classList.add('element-hidden');
+            
+                        const transitionDuration = parseFloat(getComputedStyle(element).transitionDuration) * 1000;
+                        
+                        // Questo timeout è per la transizione dell'elemento stesso
+                        setTimeout(() => {
+                            element.style.display = 'none'; 
+                            if (callback && !animationAborted) { // Esegui callback solo se non interrotta
+                                callback(); 
+                            }
+                        }, transitionDuration);
+                    };
+            
+                    // Funzione per animare una singola parola della sequenza iniziale
+                    const animateWord = (word, onWordAnimationCompleteCallback) => {
+                        if (animationAborted) return;
+                        fadeIn(displayText, word); 
+                        registerTimeout(() => { // Timeout per la durata di visualizzazione della parola
+                            if (animationAborted) return;
+                            fadeOutAndHide(displayText, () => { // La callback di fadeOutAndHide viene eseguita dopo la transizione
+                                if (!animationAborted) { // Controlla prima di schedulare il prossimo passo
+                                    registerTimeout(onWordAnimationCompleteCallback, pauseBetweenWords);
+                                }
+                            });
+                        }, textVisibleTime); 
+                    };
+            
+                    // Funzione per mostrare il display finale "PUNCHES ARE BACK!" con l'immagine
+                    const showFinalDisplay = (onFinalDisplayHiddenCallback) => {
+                        if (animationAborted) return;
+                        fadeIn(displayText, 'PUNCHES ARE BACK!');
+                        fadeIn(imgBurg1); 
+            
+                        registerTimeout(() => { // Timeout per la durata del display finale
+                            if (animationAborted) return;
+                            let itemsToHide = 2;
+                            let itemsHidden = 0;
+                            const itemHiddenCallback = () => {
+                                if (animationAborted) return;
+                                itemsHidden++;
+                                if (itemsHidden === itemsToHide) {
+                                    if (!animationAborted) { // Controlla prima di schedulare il prossimo passo
+                                        registerTimeout(onFinalDisplayHiddenCallback, pauseBetweenWords);
+                                    }
+                                }
+                            };
+                            fadeOutAndHide(displayText, itemHiddenCallback);
+                            fadeOutAndHide(imgBurg1, itemHiddenCallback);
+                        }, finalDisplayVisibleTime);
+                    };
+                    
+                    // Gestore per il click sul pulsante di chiusura
+                    closeBtn.addEventListener('click', () => {
+                        animationAborted = true;
+                        clearAllAnimationTimeouts();
+            
+                        // Nascondi immediatamente testo e immagine, annullando le loro transizioni
+                        displayText.style.transition = 'none';
+                        imgBurg1.style.transition = 'none';
+                        displayText.style.opacity = '0';
+                        imgBurg1.style.opacity = '0';
+                        displayText.style.display = 'none';
+                        imgBurg1.style.display = 'none';
+            
+                        // Avvia la transizione di scomparsa dell'overlay principale
+                        overlay.classList.remove('overlay-visible');
+                        overlay.classList.add('overlay-hidden');
+            
+                        // Rimuovi l'overlay dal DOM dopo la sua transizione di scomparsa
+                        setTimeout(() => {
+                            if (overlay.parentNode) { 
+                                overlay.remove();
+                            }
+                        }, overlayFadeDuration);
+                    });
+            
+                    // Sequenza dell'animazione principale
+                    const startMainAnimation = () => {
+                        if (animationAborted) return; 
+                        overlay.classList.remove('overlay-hidden');
+                        overlay.classList.add('overlay-visible');
+                        imgBurg1.style.display = 'none'; 
+                        displayText.style.display = 'none'; // Assicurati che anche il testo sia nascosto all'inizio
+            
+                        registerTimeout(() => { // Ritardo iniziale
+                            if (animationAborted) return;
+                            animateWord('PUNCHES', () => { 
+                                if (animationAborted) return;
+                                animateWord('ARE', () => {    
+                                    if (animationAborted) return;
+                                    animateWord('BACK', () => {  
+                                        if (animationAborted) return;
+                                        showFinalDisplay(() => {
+                                            if (animationAborted) return;
+                                            overlay.classList.remove('overlay-visible');
+                                            overlay.classList.add('overlay-hidden');
+                            
+                                            setTimeout(() => { // Timeout per la rimozione finale dell'overlay
+                                                if (overlay.parentNode && !animationAborted) { 
+                                                    overlay.remove();
+                                                }
+                                            }, overlayFadeDuration);
+                                        });
+                                    });
+                                });
+                            });
+                        }, initialDelay);
+                    };
+                
+                    // Avvia l'intera animazione
+                    startMainAnimation();
+                });
+            </script>
+        
         <div id="campo">
           <h1>SELECT PLAYER</h1>
                <form id="campo-scelta">
@@ -109,6 +382,9 @@
                     <input type="checkbox" name="a"><label>PUCIO</label>
                 </div>
                 <div class="singlePlayer">
+                    <input type="checkbox" name="a"><label>KARMA</label>
+                </div>
+                <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest1</label>
                 </div>
                 <div class="singlePlayer">
@@ -119,6 +395,9 @@
                 </div>
                 <div class="singlePlayer">
                     <input type="checkbox" name="a"><label>Guest4</label>
+                </div>
+                <div class="singlePlayer">
+                    <input type="checkbox" name="a"><label>Guest5</label>
                 </div>
                </form>     
             </div>        
